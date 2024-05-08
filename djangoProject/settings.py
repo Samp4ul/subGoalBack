@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-f7cii08wf@eb31s-!%%c(7_rjzrn&rc81g=zxu9f_&6!i%v7vw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost","https://statuesque-sunflower-507e38.netlify.app/"]
+ALLOWED_HOSTS = ["localhost","https://statuesque-sunflower-507e38.netlify.app/","subgoalback.onrender.com"]
 
 
 # Application definition
