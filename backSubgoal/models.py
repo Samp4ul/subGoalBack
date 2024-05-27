@@ -11,6 +11,7 @@ class Score(models.Model):
 class Subgoal(models.Model):
     score = models.IntegerField()
     nom = models.CharField(max_length=100)
+    description = models.CharField(max_length=300,default="")
 
     def __str__(self):
         return f"{self.nom} ({self.score} pts)"

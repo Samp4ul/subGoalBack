@@ -49,7 +49,8 @@ def add_subgoal(request):
     try:
         nom = request.data.get('nom')
         score = request.data.get('score')
-        Subgoal.objects.create(nom=nom, score=score)
+        description = request.data.get('description')
+        Subgoal.objects.create(nom=nom, score=score,description=description)
         return Response({"message": "Subgoal Created"}, status=status.HTTP_201_CREATED)
     except Exception as e:
         return Response({"message": str(e)}, status=status.HTTP_400_BAD_REQUEST)
@@ -62,7 +63,7 @@ def get_data(request):
     score_actuel = score.score_actuel if score else 0
 
     # Retrieve all subgoals
-    subgoals = Subgoal.objects.all().values('score', 'nom')
+    subgoals = Subgoal.objects.all().values('score', 'nom','description')
 
     return Response({
         "score_actuel": score_actuel,
